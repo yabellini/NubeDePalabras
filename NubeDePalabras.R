@@ -80,7 +80,7 @@ wordcloud2(names, size = 1, minRotation = -pi/6, maxRotation = -pi/6,
                   color = "random-light", backgroundColor = "grey")
 
 
-#intento de forma de R, no logro hacerlo funcionar
+#intento de forma de R (funciona instalando el paquete desde github y no desde CRAN)
 
 names <- nombres[!is_ok] %>% 
   flatten_dfc() %>% 
@@ -90,7 +90,18 @@ names <- nombres[!is_ok] %>%
   count(word) %>%
   filter(n>9)
 
+#Quiero una paleta de colores personalizada
+#Aqui tengo los cuatro colores de base
+colorlist <- c('#f7e4be', '#f0f4bc', '#9a80a4', '#848da6')
 
-letterCloud(names,  word = "R", color='random-light' , backgroundColor="black")
+#Tengo que repetirlos por la cantidad de palabras que se deben graficar
 
-wordcloud2(names, figPath = "rlogo1.png", size = 0.4, color = "skyblue", backgroundColor="black")
+colores <- rep(list(colorlist), 68) #A manopla para probar. TODO: realizar el calculo por la cantida de palabras
+colorlist <- unlist(colores)
+
+#letterCloud(names,  word = "R", color='random-light', backgroundColor="#223564")
+
+letterCloud(names,  word = "R", color=colorlist, backgroundColor="#223564")
+
+#Este sigue sin funcionar
+wordcloud2(names, figPath = "rlogo1.png", size = 0.4, color = "skyblue")
