@@ -34,3 +34,5 @@ install.packages("tm")  (Para tener stop_words en otros idiomas adem√°s de ingl√
 
 ![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/ConFormaDeR.png)
 
+![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/RConColoresLatinR.png)
+
