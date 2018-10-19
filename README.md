@@ -10,6 +10,7 @@ En un principio tomar las palabras que se utilizan en los títulos de los evento
 - https://github.com/Lchiffon/wordcloud2 
 - https://jvera.rbind.io/post/2017/10/16/spanish-stopwords-for-tidytext-package/ (stop words en español)
 - https://www.r-graph-gallery.com/196-the-wordcloud2-library/
+- https://github.com/Lchiffon/wordcloud2/issues/12
 
 ## Paquetes que utilicé:
 
