@@ -1,4 +1,4 @@
-# NubeDePalabras
+# Nube De Palabras de R-Ladies
 ## Nube de palabras con los meetups de RLadies
 
 Objetivo: dibujar una nube de palabras con los temas tratados en los eventos de R-Ladies en todo el mundo.
@@ -29,4 +29,7 @@ install.packages("tm")  (Para tener stop_words en otros idiomas adem√°s de ingl√
 
 ![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/nubeDepalabras2.png)
 
+## Con forma de R
+
+![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/ConFormaDeR.png)
 
