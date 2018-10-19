@@ -13,6 +13,7 @@ En un principio tomar las palabras que se utilizan en los títulos de los evento
 
 ## Paquetes que utilicé:
 
+```
 install.packages("tidyverse")
 install.packages("purrr")
 install.packages("dplyr")
@@ -21,7 +22,7 @@ devtools::install_github("rladies/meetupr")
 install.packages("wordcloud2")
 install.packages("tidytext")
 install.packages("tm")  (Para tener stop_words en otros idiomas además de inglés)
-
+```
 ## Los primeros resultados:
 
 ![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/NubeDePalabras1.png)
