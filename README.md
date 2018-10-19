@@ -21,3 +21,11 @@ devtools::install_github("rladies/meetupr")
 install.packages("wordcloud2")
 install.packages("tidytext")
 install.packages("tm")  (Para tener stop_words en otros idiomas además de inglés)
+
+Los primeros resultados:
+
+![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/NubeDePalabras1.png)
+
+![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/nubeDepalabras2.png)
+
+
