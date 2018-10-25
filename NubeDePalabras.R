@@ -9,7 +9,7 @@ library(tidytext)
 Sys.setenv(MEETUP_KEY = 'Aca va tu API Key de Meetup)
 
 #Función para que no de error de time out para la llamadas al método de meetupr
-#Código de Jeny Brian
+#Código de Jenny Brian
 slowly <- function(f, delay = 0.5) {
   
   function(...) {
