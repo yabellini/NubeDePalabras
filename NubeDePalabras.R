@@ -24,7 +24,7 @@ slowly <- function(f, delay = 0.5) {
 
 
 #preparo un listado de stopwords en varios idiomas para sacarlos de la nube de palabras
-# No tengo idea si esto se puede hacer de otra manera más sencilla, `pero funciona
+#¿Se podrá hacer de manera más sencilla?
 
 idiomas <- list('spanish', 'portuguese', 'french', 'danish', 'dutch', 'finnish', 'german', 'hungarian', 'italian', 'norwegian', 'russian', 'swedish')
 
@@ -80,7 +80,7 @@ wordcloud2(names, size = 1, minRotation = -pi/6, maxRotation = -pi/6,
                   color = "random-light", backgroundColor = "grey")
 
 
-#intento de forma de R (funciona instalando el paquete desde github y no desde CRAN)
+#intento de forma de R (funciona instalando el paquete wordcloud2 desde github y no desde CRAN)
 
 names <- nombres[!is_ok] %>% 
   flatten_dfc() %>% 
@@ -91,7 +91,7 @@ names <- nombres[!is_ok] %>%
   filter(n>9)
 
 #Quiero una paleta de colores personalizada
-#Aqui tengo los cuatro colores de base
+#Aqui tengo los cuatro colores de base que utilicé en la imagen original
 colorlist <- c('#f7e4be', '#f0f4bc', '#9a80a4', '#848da6')
 
 #Tengo que repetirlos por la cantidad de palabras que se deben graficar
@@ -103,5 +103,6 @@ colorlist <- unlist(colores)
 
 letterCloud(names,  word = "R", color=colorlist, backgroundColor="#223564")
 
-#Este sigue sin funcionar
+#Este código busca dar la forma de la nube de palabras de acuerdo a 
+#una imagen, pero sigue sin funcionar en mi maquina
 wordcloud2(names, figPath = "rlogo1.png", size = 0.4, color = "skyblue")
