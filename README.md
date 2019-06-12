@@ -17,7 +17,7 @@ Aqui cuento como hice esa nube de palabras usando el paquete meetupr, desarrolla
 
 Objetivo: dibujar una nube de palabras con los temas tratados en los eventos de R-Ladies *en todo el mundo* que sea lo mas parecida posible a la realizada para la presentación de LatinR.
 
-La fuente de datos son *las palabras que se utilizan en los títulos de los eventos*.
+La fuente de datos son *las palabras que se utilizan en los títulos de los eventos* y se utilizó el paquete **meetupr**.
 
 ## Links que utilicé:
 Este listado de recursos fueron muy útiles para poder realizar la nube de palabras.
@@ -44,7 +44,6 @@ install.packages("tm")  (Para tener stop_words en otros idiomas además de ingl�
 ```
 
 ## El código
-Se puede acceder a todo el código [aqui](https://github.com/yabellini/NubeDePalabras/blob/master/NubeDePalabras.R)
 
 Despues de cargar los paquetes necesarios, necesitamos generar una API Key de Meetup y asignarla de la siguiente manera (más detalles [aquí](https://github.com/rladies/meetupr)):
 
@@ -165,4 +164,4 @@ wordcloud2(names, figPath = "rlogo1.png", size = 0.4, color = "skyblue")
 
 Si alguien encuentra una manera de hacer funcionar este código sería genial que lo compartiera!
 
-Espero les haya gustado tanto como a mi me gustó hacer este ejercicio.
+Espero les haya gustado tanto como a mi me gustó hacer este ejercicio.  Se puede acceder a todo el código [aqui](https://github.com/yabellini/NubeDePalabras/blob/master/NubeDePalabras.R)
