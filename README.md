@@ -63,11 +63,12 @@ library(tidytext)
 y luego necesitamos generar una API Key de Meetup y asignarla de la siguiente manera (más detalles [aquí](https://github.com/rladies/meetupr)):
 
 ```
-Sys.setenv(MEETUP_KEY = 'Aca va tu API Key de Meetup)
+Sys.setenv(MEETUP_KEY = 'Aca va tu API Key de Meetup')
 ```
 Luego, es necesario generar una función que "espere" entre una llamada a la API y otra, para evitar errores de *time out* (gracias a [Jenny Brian](https://twitter.com/jennybryan) por este código)
 
-```slowly <- function(f, delay = 0.5) {
+```
+slowly <- function(f, delay = 0.5) {
   
   function(...) {
     
@@ -91,7 +92,8 @@ variosIdiomas_stop_words <- idiomas %>%
   select(word, lexicon)
 ```
 El segundo paso es obtener los títulos de todos los meetups de R-Ladies alrrededor del mundo, para esto utilicé el código de la [Shiny App de R-Ladies](https://github.com/rladies/rshinylady), el cual obtiene todos los grupos de R-Ladies y limpia los resultados:
-```all_rladies_groups <- find_groups(text = "r-ladies")
+```
+all_rladies_groups <- find_groups(text = "r-ladies")
 
 rladies_groups <- all_rladies_groups[grep(pattern = "rladies|r-ladies", 
                                           x = all_rladies_groups$name,
@@ -108,7 +110,9 @@ eventos <- rladies_groups$urlname %>%
 
 En **eventos** queda una lista con todos los datos de todos los eventos realizados: nombre, fecha, lugar, descripción....y una carralada de datos más.  Por el momento la lista tiene dos elementos: uno con los resultados correctos y otro con los errores, se genera un error cuando no hay eventos pasados en el grupo.  Como sólo interesa la información almacenada en resultados, filtramos esa información: 
 
-```eventos_todos_juntos <- eventos$result %>% map(bind_rows) %>% transpose()```
+```
+eventos_todos_juntos <- eventos$result %>% map(bind_rows) %>% transpose()
+```
 
 La nube de palabras original fue armada con los títulos de los meetups, asi que generamos una lista con esa información, que se encuentra en el atributo name (*nombre*):
 
