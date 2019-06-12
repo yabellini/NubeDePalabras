@@ -9,13 +9,13 @@ En esa [presentación](https://github.com/LatinR/presentaciones-LatinR2018/blob/
 
 ![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/ROriginal.png)
 
-En un principio utilicé R para generar el listado de palabras, pero no para generar la nube; pero como soy una R-Lady no podía dejar de intentar realizar todo el proceso utilizando R. 
+En un principio utilicé R para generar el listado de palabras, pero no para generar la nube; como soy una R-Lady no podía dejar de intentar realizar todo el proceso utilizando R. 
 
 Aqui cuento como hice esa nube de palabras usando el paquete **meetupr**, *desarrollado por R-Ladies*.
 
 ## Nube de palabras con los meetups de RLadies
 
-**Objetivo**: dibujar una nube de palabras con los temas tratados en los eventos de R-Ladies *en todo el mundo* que sea lo mas parecida posible a la realizada para la presentación de LatinR.
+**Objetivo**: dibujar una nube de palabras con los temas tratados en los eventos de R-Ladies *en todo el mundo* que sea lo más parecida posible a la realizada para la presentación de LatinR.
 
 La fuente de datos son *las palabras que se utilizan en los títulos de los eventos* y se utilizó el paquete **meetupr** para obtener esa información.
 
@@ -39,7 +39,6 @@ Este es el código para instalar los paquetes necesarios:
 ```
 install.packages("tidyverse")
 install.packages("purrr")
-install.packages("dplyr")
 install.packages("devtools")
 devtools::install_github("rladies/meetupr")
 install.packages("wordcloud2")
@@ -80,7 +79,7 @@ slowly <- function(f, delay = 0.5) {
   
 }
 ```
-Finalmente, se debe prepar un listado de stopwords en varios idiomas (R-Ladies está presente en más de 4 países) para sacarlos de la nube de palabras (¿Se podrá hacer de manera más sencilla?)
+Finalmente, se debe prepar un listado de *stop words* en varios idiomas (R-Ladies está presente en más de 40 países) para sacarlos de la nube de palabras (¿Se podrá hacer de manera más sencilla?).  Las *stop wors* son palabras como artículos, preposiciones, conectores, por ejemplo: *la*, *el*, *con*, etc.
 ```
 idiomas <- list('spanish', 'portuguese', 'french', 'danish', 'dutch', 'finnish', 'german', 'hungarian', 'italian', 'norwegian', 'russian', 'swedish')
 
@@ -91,7 +90,7 @@ variosIdiomas_stop_words <- idiomas %>%
   bind_rows(stop_words) %>%
   select(word, lexicon)
 ```
-El segundo paso es obtener los títulos de todos los meetups de R-Ladies alrrededor del mundo, para esto utilicé el código de la [Shiny App de R-Ladies](https://github.com/rladies/rshinylady), el cual obtiene todos los grupos de R-Ladies y limpia los resultados:
+El segundo paso es obtener los títulos de todos los meetups de R-Ladies alrededor del mundo, para esto utilicé el código de la [Shiny App de R-Ladies](https://github.com/rladies/rshinylady), el cual obtiene todos los grupos de R-Ladies y limpia los resultados:
 ```
 all_rladies_groups <- find_groups(text = "r-ladies")
 
@@ -120,7 +119,7 @@ La nube de palabras original fue armada con los títulos de los meetups, asi que
 nombres <- eventos_todos_juntos$name 
 is_ok <- nombres %>% map_lgl(is_null)
 ```
-Para los meetups que tienen nombre, los títulos quedan como columnas, asi que se pasan a filas y se separan en palabras.  Con esta lista de palabras se sacan los *stop_words* (palabras que son artículos, preposiciones, conectores, como *la*, *el*, *con*, etc) en varios idiomas (dataframe **variosIdiomas_stop_words**) y retenemos todas las palabras que tienen al menos 3 ocurrencias (si no quedan 1400 palabras)
+Para los meetups que tienen nombre, los títulos quedan como columnas, asi que se pasan a filas y se separan en palabras.  Con esta lista de palabras se sacan los *stop words* en varios idiomas (dataframe **variosIdiomas_stop_words**) y retenemos todas las palabras que tienen al menos 3 ocurrencias (si no quedan 1400 palabras)
 ```
 names <- nombres[!is_ok] %>% 
   flatten_dfc() %>% 
