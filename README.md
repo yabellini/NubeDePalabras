@@ -2,7 +2,8 @@
 
 En septiembre de 2018 se realizó en Buenos Aires la primera edición de LatinR, la [Conferencia Latinoamericana de Investigación y Desarrollo en R](https://github.com/LatinR/presentaciones-LatinR2018). Durante la conferencia tuve la posibilidad de compartir con los asistentes la iniciativa de R-Ladies junto con [Laura Acion](http://lacion.rbind.io/) y [Bea Hernandez](https://twitter.com/chucheria).  
 
-(https://github.com/yabellini/NubeDePalabras/blob/master/imagen.png)
+
+![alt tag](https://github.com/yabellini/NubeDePalabras/blob/master/imagen.png)
 
 En esa [presentación](https://github.com/LatinR/presentaciones-LatinR2018/blob/master/presentaciones-orales/LatinR2018_RLadies.pptx) utilizamos una nube de palabras para contar que tipo de temas se trabajan en los meetups de R-Ladies en Latinoamérica.
 
