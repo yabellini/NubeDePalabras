@@ -168,7 +168,7 @@ names <- nombres[!is_ok] %>%
 
 colorlist <- c('#f7e4be', '#f0f4bc', '#9a80a4', '#848da6')
 ```
-Como hay que repetir los colores por la cantidad de palabras que se deben graficar, utilizamos este código (el número está puesto a a mano para probar, en el To Do List: realizar el calculo por la cantida de palabras)
+Como hay que repetir los colores por la cantidad de palabras que se deben graficar, utilizamos este código (el número está puesto a a mano para probar, en el To Do List: realizar el calculo por la cantidad de palabras)
 ```
 colores <- rep(list(colorlist), 68) 
 colorlist <- unlist(colores)
@@ -188,5 +188,9 @@ Finalmente, este código busca dar la forma de la nube de palabras de acuerdo a 
 wordcloud2(names, figPath = "rlogo1.png", size = 0.4, color = "skyblue")
 ```
 Si alguien encuentra una manera de hacer funcionar este código sería genial que lo compartiera!
+
+# Como sigue:
+
+Ahora estoy trabajando en separar las palabras de acuerdo al idioma y realizar una nube de palabras por cada lenguaje que se habla en la comunidad de R-Ladies.
 
 Espero les haya gustado tanto como a mi me gustó hacer este ejercicio.  Se puede acceder a todo el código [aqui](https://github.com/yabellini/NubeDePalabras/blob/master/NubeDePalabras.R)
