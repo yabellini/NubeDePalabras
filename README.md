@@ -65,7 +65,7 @@ y luego necesitamos generar una API Key de Meetup y asignarla de la siguiente ma
 ```
 Sys.setenv(MEETUP_KEY = 'Aca va tu API Key de Meetup')
 ```
-Luego, es necesario generar una función que "espere" entre una llamada a la API y otra, para evitar errores de *time out* (gracias a [Jenny Brian](https://twitter.com/jennybryan) por este código)
+Luego, es necesario generar una función que "espere" entre una llamada a la API y otra, para evitar errores de *time out* (gracias a [Jenny Bryan](https://twitter.com/jennybryan) por este código)
 
 ```
 slowly <- function(f, delay = 0.5) {
